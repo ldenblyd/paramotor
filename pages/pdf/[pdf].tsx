@@ -1,7 +1,7 @@
 import React from "react";
 import { engines } from "../../data/engine";
 import { useRouter } from "next/router";
-import styles from "./engine.module.css";
+import styles from "./pdf.module.css";
 
 const Pdf = () => {
   const router = useRouter();
