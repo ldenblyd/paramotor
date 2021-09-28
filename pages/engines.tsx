@@ -1,25 +1,36 @@
-import Head from "next/head";
-import { engines } from "../data/engine";
-import { EngineCard } from "../components/cards/EngineCard";
-import Layout from "../components/Layout/index";
+import Link from "next/link";
 
-export default function Engines() {
+import Grid from "../components/Grid/Grid";
+import Layout from "../Layout/index";
+import EngineCard from "../components/Cards/EngineCard";
+import { Engine } from "../types/engine";
+import { getEngines } from "./api/getEngines";
+import { GetStaticProps } from "next";
+
+interface Props {
+  engines: Engine[];
+}
+
+const Engines: React.FC<Props> = ({ engines }) => {
   return (
     <Layout>
-      <Head>
-        <title>Awesome Links</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container mx-auto max-w-5xl my-20">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {engines.map((engine) => (
-            <li key={engine.id}>
-              <EngineCard {...engine} />
-            </li>
-          ))}
-        </ul>
+      <div className="w-full flex justify-center">
+        <Link href="/add/engine">
+          <a>ajouter un moteur</a>
+        </Link>
       </div>
+
+      <Grid list={engines} Component={EngineCard} />
     </Layout>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      engines: await getEngines(),
+    },
+  };
+};
+
+export default Engines;

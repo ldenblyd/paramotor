@@ -1,25 +1,27 @@
-import Head from "next/head";
-import { paramotor } from "../data/paramotor";
-import { ParamotorCard } from "../components/cards/ParamotorCard";
-import Layout from "../components/Layout/index";
+import Grid from "../components/Grid/Grid";
+import Layout from "../Layout/index";
+import ParamotorCard from "../components/Cards/ParamotorCard";
+import { GetStaticProps } from "next";
+import { Paramotor } from "../types/paramotor";
+import { getParamotors } from "./api/getParamotors";
 
-export default function Paramotors() {
+interface Props {
+  paramotors: Paramotor[];
+}
+const Paramotors: React.FC<Props> = ({ paramotors }) => {
   return (
     <Layout>
-      <Head>
-        <title>Awesome Links</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container mx-auto max-w-5xl my-20">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {paramotor.map((paramotor) => (
-            <li key={paramotor.id}>
-              <ParamotorCard {...paramotor} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Grid list={paramotors} Component={ParamotorCard} />
     </Layout>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      paramotors: await getParamotors(),
+    },
+  };
+};
+
+export default Paramotors;

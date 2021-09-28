@@ -1,12 +1,6 @@
-enum Sizes {
-  S,
-  M,
-  L,
-  XL,
-  ALL,
-}
+import { Sizes, Seat } from "../types/seat";
 
-export const seat = [
+export const seat: Seat[] = [
   {
     category: "seat",
     description: "",

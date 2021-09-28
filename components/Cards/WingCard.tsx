@@ -1,6 +1,11 @@
-import React from "react";
+import { Wing } from "../../types/wing";
 
-export const PropellerCard = ({ imageUrl, category, brand, model }) => {
+export const WingCard: React.FC<Wing> = ({
+  imageUrl,
+  category,
+  brand,
+  model,
+}) => {
   return (
     <div className="shadow  max-w-md  rounded">
       <img
@@ -17,3 +22,5 @@ export const PropellerCard = ({ imageUrl, category, brand, model }) => {
     </div>
   );
 };
+
+export default WingCard;

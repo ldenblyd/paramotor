@@ -1,26 +1,27 @@
-import Head from "next/head";
+import Grid from "../components/Grid/Grid";
+import Layout from "../Layout/index";
+import PropellerCard from "../components/Cards/PropellerCard";
+import { GetStaticProps } from "next";
+import { Propeller } from "../types/propeller";
+import { getPropellers } from "./api/getPropellers";
 
-import { propeller } from "../data/propeller";
-import { PropellerCard } from "../components/cards/PropellerCard";
-import Layout from "../components/Layout/index";
+interface Props {
+  propellers: Propeller[];
+}
 
-export default function Propellers() {
+const Propellers: React.FC<Props> = ({ propellers }) => {
   return (
     <Layout>
-      <Head>
-        <title>Awesome Links</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container mx-auto max-w-5xl my-20">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {propeller.map((propeller) => (
-            <li key={propeller.id}>
-              <PropellerCard {...propeller} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Grid list={propellers} Component={PropellerCard} />
     </Layout>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      propellers: await getPropellers(),
+    },
+  };
+};
+export default Propellers;

@@ -1,7 +1,13 @@
-import React from "react";
+import { Seat } from "../../types/seat";
 import { getStringInterval } from "../../utils/getMinMaxValue";
 
-export const SeatCard = ({ imageUrl, category, brand, model, size }) => {
+export const SeatCard: React.FC<Seat> = ({
+  imageUrl,
+  category,
+  brand,
+  model,
+  size,
+}) => {
   const weightList = size.map((s) => s.weight);
   const heightList = size.reduce((acc, s) => {
     acc.push(s.height.min);
@@ -33,3 +39,5 @@ export const SeatCard = ({ imageUrl, category, brand, model, size }) => {
     </div>
   );
 };
+
+export default SeatCard;

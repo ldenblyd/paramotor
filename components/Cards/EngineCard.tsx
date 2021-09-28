@@ -1,14 +1,14 @@
-import React from "react";
 import { getStringInterval } from "../../utils/getMinMaxValue";
+import { Engine } from "../../types/engine";
 
-export const EngineCard = ({
+const EngineCard: React.FC<Engine> = ({
   imageUrl,
   category,
   starter,
   brand,
   model,
   power,
-  cc,
+  cylinderVolume,
 }) => {
   const weightList = starter.map((s) => s.weight);
   return (
@@ -23,7 +23,7 @@ export const EngineCard = ({
         <p className="text-lg font-bold">
           {brand} {model}
         </p>
-        <p className="text-lg">cilindrée: {cc} cc</p>
+        <p className="text-lg">cilindrée: {cylinderVolume} cc</p>
         <p className="text-lg">
           puissance: {power.hp} Cv at {power.rpm} rpm
         </p>
@@ -32,3 +32,5 @@ export const EngineCard = ({
     </div>
   );
 };
+
+export default EngineCard;

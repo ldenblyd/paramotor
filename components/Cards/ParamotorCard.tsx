@@ -1,6 +1,11 @@
-import React from "react";
+import { Paramotor } from "../../types/paramotor";
 
-export const ParamotorCard = ({ imageUrl, category, brand, model }) => {
+const ParamotorCard: React.FC<Paramotor> = ({
+  imageUrl,
+  category,
+  brand,
+  model,
+}) => {
   return (
     <div className="shadow  max-w-md  rounded">
       <img
@@ -17,3 +22,5 @@ export const ParamotorCard = ({ imageUrl, category, brand, model }) => {
     </div>
   );
 };
+
+export default ParamotorCard;

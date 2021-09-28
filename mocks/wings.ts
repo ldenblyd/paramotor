@@ -1,8 +1,10 @@
-export const wing = [
+import { Wing } from "../types/wing";
+
+export const wing: Wing[] = [
   {
+    id: "wing-1",
     category: "wing",
     description: "",
-    id: "wing-1",
     imageUrl:
       "https://fullbluesky.com/wp-content/uploads/2018/01/boxer_2_home_5.jpg",
     brand: "Itv",

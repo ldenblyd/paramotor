@@ -1,27 +1,28 @@
-import Head from "next/head";
+import Grid from "../components/Grid/Grid";
+import Layout from "../Layout/index";
+import WingCard from "../components/Cards/WingCard";
+import { Wing } from "../types/wing";
+import { GetStaticProps } from "next";
+import { getWings } from "./api/getWings";
 
-import { wing } from "../data/wing";
-import { WingCard } from "../components/cards/WingCard";
+interface Props {
+  wings: Wing[];
+}
 
-import Layout from "../components/Layout/index";
-
-export default function Wings() {
+const Wings: React.FC<Props> = ({ wings }) => {
   return (
     <Layout>
-      <Head>
-        <title>Awesome Links</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container mx-auto max-w-5xl my-20">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {wing.map((wing) => (
-            <li key={wing.id}>
-              <WingCard {...wing} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Grid list={wings} Component={WingCard} />
     </Layout>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      wings: await getWings(),
+    },
+  };
+};
+
+export default Wings;

@@ -1,26 +1,28 @@
-import Head from "next/head";
+import Grid from "../components/Grid/Grid";
+import Layout from "../Layout/index";
+import SeatCard from "../components/Cards/SeatCard";
+import { GetStaticProps } from "next";
+import { Seat } from "../types/seat";
+import { getSeats } from "./api/getSeats";
 
-import { seat } from "../data/seat";
-import { SeatCard } from "../components/cards/SeatCard";
-import Layout from "../components/Layout/index";
+interface Props {
+  seats: Seat[];
+}
 
-export default function Seats() {
+const Seats: React.FC<Props> = ({ seats }) => {
   return (
     <Layout>
-      <Head>
-        <title>Awesome Links</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <div className="container mx-auto max-w-5xl my-20">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {seat.map((seat) => (
-            <li key={seat.id}>
-              <SeatCard {...seat} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Grid list={seats} Component={SeatCard} />
     </Layout>
   );
-}
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  return {
+    props: {
+      seats: await getSeats(),
+    },
+  };
+};
+
+export default Seats;

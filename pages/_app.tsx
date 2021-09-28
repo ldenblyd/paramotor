@@ -1,12 +1,8 @@
 import "../styles/tailwind.css";
-import Layout from "../components/Layout";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
-  return (
-    // <Layout>
-    <Component {...pageProps} />
-    // </Layout>
-  );
-}
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
 
 export default MyApp;
