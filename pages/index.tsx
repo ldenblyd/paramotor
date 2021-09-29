@@ -1,4 +1,4 @@
-import Layout from "../Layout/index";
+import Layout from "layout/index";
 
 const Home: React.FC = () => {
   return <Layout>home</Layout>;

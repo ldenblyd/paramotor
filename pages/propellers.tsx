@@ -1,9 +1,9 @@
-import Grid from "../components/Grid/Grid";
-import Layout from "../Layout/index";
-import PropellerCard from "../components/Cards/PropellerCard";
+import Grid from "components/Grid/Grid";
+import Layout from "layout/index";
+import PropellerCard from "components/Cards/PropellerCard";
 import { GetStaticProps } from "next";
-import { Propeller } from "../types/propeller";
-import { getPropellers } from "./api/getPropellers";
+import { Propeller } from "types/propeller";
+import { getPropellers } from "pages/api/get/propellers";
 
 interface Props {
   propellers: Propeller[];

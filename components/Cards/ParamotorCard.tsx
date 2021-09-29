@@ -1,4 +1,4 @@
-import { Paramotor } from "../../types/paramotor";
+import { Paramotor } from "types/paramotor";
 
 const ParamotorCard: React.FC<Paramotor> = ({
   imageUrl,

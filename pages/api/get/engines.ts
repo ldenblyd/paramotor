@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { engines } from "../../mocks/engines";
-import { Engine } from "../../types/engine";
+import { engines } from "mocks/engines";
+import { Engine } from "types/engine";
 
 export const getEngines = async (): Promise<Engine[]> => {
   return engines;

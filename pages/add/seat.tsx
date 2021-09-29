@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Layout from "../../Layout/index";
+import Layout from "layout/index";
 
 const AddSeat: React.FC = () => {
   return (

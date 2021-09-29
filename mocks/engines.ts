@@ -1,4 +1,4 @@
-import { StarterEnum, ClutchEnum, Engine } from "../types/engine";
+import { StarterEnum, ClutchEnum, Engine } from "types/engine";
 
 export const engines: Engine[] = [
   {

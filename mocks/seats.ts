@@ -1,4 +1,4 @@
-import { Sizes, Seat } from "../types/seat";
+import { Sizes, Seat } from "types/seat";
 
 export const seat: Seat[] = [
   {

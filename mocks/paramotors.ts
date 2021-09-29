@@ -1,4 +1,4 @@
-import { Paramotor } from "../types/paramotor";
+import { Paramotor } from "types/paramotor";
 
 export const paramotor: Paramotor[] = [
   {

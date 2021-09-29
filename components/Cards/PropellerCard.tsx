@@ -1,4 +1,4 @@
-import { Propeller } from "../../types/propeller";
+import { Propeller } from "types/propeller";
 
 const PropellerCard: React.FC<Propeller> = ({
   imageUrl,

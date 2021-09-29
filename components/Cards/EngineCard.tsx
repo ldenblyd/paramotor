@@ -1,5 +1,5 @@
-import { getStringInterval } from "../../utils/getMinMaxValue";
-import { Engine } from "../../types/engine";
+import { getStringInterval } from "utils/getMinMaxValue";
+import { Engine } from "types/engine";
 
 const EngineCard: React.FC<Engine> = ({
   imageUrl,

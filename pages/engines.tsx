@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-import Grid from "../components/Grid/Grid";
-import Layout from "../Layout/index";
-import EngineCard from "../components/Cards/EngineCard";
-import { Engine } from "../types/engine";
-import { getEngines } from "./api/getEngines";
+import Grid from "components/Grid/Grid";
+import Layout from "layout/index";
+import EngineCard from "components/Cards/EngineCard";
+import { Engine } from "types/engine";
+import { getEngines } from "pages/api/get/engines";
 import { GetStaticProps } from "next";
 
 interface Props {

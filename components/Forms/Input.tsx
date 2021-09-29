@@ -1,4 +1,4 @@
-import { Bind, TypeInput } from "../../hooks/useInput";
+import { Bind, TypeInput } from "hooks/useInput";
 
 interface Props {
   placeHolder: string;

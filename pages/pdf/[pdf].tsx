@@ -1,4 +1,4 @@
-import { engines } from "../../mocks/engines";
+import { engines } from "mocks/engines";
 import { useRouter } from "next/router";
 import styles from "./pdf.module.css";
 

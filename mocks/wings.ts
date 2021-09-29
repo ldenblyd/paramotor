@@ -1,4 +1,4 @@
-import { Wing } from "../types/wing";
+import { Wing } from "types/wing";
 
 export const wing: Wing[] = [
   {

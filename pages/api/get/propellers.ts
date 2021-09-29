@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { propeller } from "../../mocks/propellers";
-import { Propeller } from "../../types/propeller";
+import { propeller } from "mocks/propellers";
+import { Propeller } from "types/propeller";
 
 export const getPropellers = async (): Promise<Propeller[]> => {
   return propeller;

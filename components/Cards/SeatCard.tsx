@@ -1,5 +1,5 @@
-import { Seat } from "../../types/seat";
-import { getStringInterval } from "../../utils/getMinMaxValue";
+import { Seat } from "types/seat";
+import { getStringInterval } from "utils/getMinMaxValue";
 
 export const SeatCard: React.FC<Seat> = ({
   imageUrl,

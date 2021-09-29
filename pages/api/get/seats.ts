@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { seat } from "../../mocks/seats";
-import { Seat } from "../../types/seat";
+import { seat } from "mocks/seats";
+import { Seat } from "types/seat";
 
 export const getSeats = async (): Promise<Seat[]> => {
   return seat;

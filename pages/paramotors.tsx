@@ -1,9 +1,9 @@
-import Grid from "../components/Grid/Grid";
-import Layout from "../Layout/index";
-import ParamotorCard from "../components/Cards/ParamotorCard";
+import Grid from "components/Grid/Grid";
+import Layout from "layout/index";
+import ParamotorCard from "components/Cards/ParamotorCard";
 import { GetStaticProps } from "next";
-import { Paramotor } from "../types/paramotor";
-import { getParamotors } from "./api/getParamotors";
+import { Paramotor } from "types/paramotor";
+import { getParamotors } from "pages/api/get/paramotors";
 
 interface Props {
   paramotors: Paramotor[];

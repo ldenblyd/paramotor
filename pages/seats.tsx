@@ -1,9 +1,9 @@
-import Grid from "../components/Grid/Grid";
-import Layout from "../Layout/index";
-import SeatCard from "../components/Cards/SeatCard";
+import Grid from "components/Grid/Grid";
+import Layout from "layout/index";
+import SeatCard from "components/Cards/SeatCard";
 import { GetStaticProps } from "next";
-import { Seat } from "../types/seat";
-import { getSeats } from "./api/getSeats";
+import { Seat } from "types/seat";
+import { getSeats } from "pages/api/get/seats";
 
 interface Props {
   seats: Seat[];

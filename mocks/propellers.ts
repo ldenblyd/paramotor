@@ -1,4 +1,4 @@
-import { PropellerRotation, Propeller } from "../types/propeller";
+import { PropellerRotation, Propeller } from "types/propeller";
 
 export const propeller: Propeller[] = [
   {

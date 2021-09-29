@@ -1,9 +1,9 @@
-import Grid from "../components/Grid/Grid";
-import Layout from "../Layout/index";
-import WingCard from "../components/Cards/WingCard";
-import { Wing } from "../types/wing";
+import Grid from "components/Grid/Grid";
+import Layout from "layout/index";
+import WingCard from "components/Cards/WingCard";
+import { Wing } from "types/wing";
 import { GetStaticProps } from "next";
-import { getWings } from "./api/getWings";
+import { getWings } from "pages/api/get/wings";
 
 interface Props {
   wings: Wing[];

@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Layout from "../../Layout/index";
+import Layout from "layout/index";
 
 const AddWing: React.FC = () => {
   return (

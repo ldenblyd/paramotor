@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { wing } from "../../mocks/wings";
-import { Wing } from "../../types/wing";
+import { wing } from "mocks/wings";
+import { Wing } from "types/wing";
 
 export const getWings = async (): Promise<Wing[]> => {
   return wing;
