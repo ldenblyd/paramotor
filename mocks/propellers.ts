@@ -1,6 +1,6 @@
 import { PropellerRotation, Propeller } from "types/propeller";
 
-export const propeller: Propeller[] = [
+export const propellers: Propeller[] = [
   {
     id: "propeller-1",
     category: "propeller",

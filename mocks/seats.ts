@@ -1,6 +1,6 @@
 import { Sizes, Seat } from "types/seat";
 
-export const seat: Seat[] = [
+export const seats: Seat[] = [
   {
     category: "seat",
     description: "",

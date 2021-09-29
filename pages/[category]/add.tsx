@@ -37,10 +37,14 @@ const AddEngine: React.FC = () => {
       </Head>
       <main>
         <form onSubmit={handleSubmit} className="w-96 flex flex-col">
-          <Input placeHolder="brand" bind={engine.brand.bind} />
-          <Input placeHolder="model" bind={engine.model.bind} />
-          <Input placeHolder="image Url" bind={engine.imageUrl.bind} />
-          <Input placeHolder="pdf link" bind={engine.pdf.bind} />
+          <Input placeHolder="brand" type="text" bind={engine.brand.bind} />
+          <Input placeHolder="model" type="text" bind={engine.model.bind} />
+          <Input
+            placeHolder="image Url"
+            type="text"
+            bind={engine.imageUrl.bind}
+          />
+          <Input placeHolder="pdf link" type="text" bind={engine.pdf.bind} />
           <Input placeHolder="cc" type="number" bind={engine.cc.bind} />
           <TextArea placeHolder="Description" bind={engine.cc.bind} />
 

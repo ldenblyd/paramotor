@@ -7,19 +7,19 @@ const Header: React.FC = () => {
         <Link href="/">
           <a className="p-4">home</a>
         </Link>
-        <Link href="/engines">
+        <Link href="/engine/list">
           <a className="p-4">engines</a>
         </Link>
-        <Link href="/propellers">
+        <Link href="/propeller/list">
           <a className="p-4">propellers</a>
         </Link>
-        <Link href="/seats">
+        <Link href="/seat/list">
           <a className="p-4">seats</a>
         </Link>
-        <Link href="/wings">
+        <Link href="/wing/list">
           <a className="p-4">wings</a>
         </Link>
-        <Link href="/paramotors">
+        <Link href="/paramotor/list">
           <a className="p-4">paramotors</a>
         </Link>
       </nav>

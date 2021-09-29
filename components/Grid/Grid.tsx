@@ -1,15 +1,18 @@
+import Card from "components/Cards/Card";
+import { Product, TypeProduct } from "types/product";
+
 interface Props {
-  list: any;
-  Component: React.FC;
+  products: Product[];
+  category: TypeProduct;
 }
 
-const Grid: React.FC<Props> = ({ list, Component }) => {
+const Grid: React.FC<Props> = ({ products, category }) => {
   return (
     <div className="container mx-auto max-w-5xl my-20">
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {list.map((list) => (
-          <li key={list.id}>
-            <Component {...list} />
+        {products.map((product) => (
+          <li key={product.id}>
+            <Card product={product} category={category} />
           </li>
         ))}
       </ul>

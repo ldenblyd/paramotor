@@ -1,6 +1,6 @@
 import { Paramotor } from "types/paramotor";
 
-export const paramotor: Paramotor[] = [
+export const paramotors: Paramotor[] = [
   {
     id: "paramotor-1",
     category: "paramotor",

@@ -1,6 +1,6 @@
 import { Wing } from "types/wing";
 
-export const wing: Wing[] = [
+export const wings: Wing[] = [
   {
     id: "wing-1",
     category: "wing",
