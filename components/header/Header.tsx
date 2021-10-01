@@ -1,9 +1,10 @@
 import Link from "next/link";
+import LangSelector from "./LangSelector";
 
 const Header: React.FC = () => {
   return (
-    <header className="text-gray-600 body-font">
-      <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+    <header className="text-gray-600 body-font flex justify-between items-center uppercase p-4 pb-8">
+      <nav className="">
         <Link href="/">
           <a className="p-4">home</a>
         </Link>
@@ -23,6 +24,8 @@ const Header: React.FC = () => {
           <a className="p-4">paramotors</a>
         </Link>
       </nav>
+
+      <LangSelector />
     </header>
   );
 };

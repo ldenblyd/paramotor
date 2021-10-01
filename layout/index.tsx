@@ -1,13 +1,8 @@
-import Header from "components/Header";
-import Head from "next/head";
+import Header from "components/header/Header";
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div>
-      <Head>
-        <title>YOUFLY</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="container mx-auto max-w-5xl">
       <Header />
       {children}
     </div>

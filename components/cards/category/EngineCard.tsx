@@ -3,6 +3,7 @@ import { Product } from "types/product";
 import Link from "next/link";
 import { Engine } from "types/engine";
 import { slug } from "utils/slug";
+import Image from "next/image";
 
 type Props = {
   product: Product;
@@ -28,11 +29,15 @@ const EngineCard: React.FC<Props> = ({ product }) => {
       passHref
     >
       <div className="shadow max-w-md rounded cursor-pointer">
-        <img
-          className="shadow-sm square"
-          src={imageUrl}
-          alt={`${brand} ${model}`}
-        />
+        <div className="shadow-sm square">
+          <Image
+            src={imageUrl}
+            alt={`${brand} ${model}`}
+            width={328}
+            height={328}
+          />
+        </div>
+
         <div className="p-5 flex flex-col space-y-2">
           <p className="text-sm text-blue-500">{category}</p>
           <p className="text-lg font-bold">

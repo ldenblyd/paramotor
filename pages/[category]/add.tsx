@@ -1,8 +1,8 @@
 import Head from "next/head";
 
 import Layout from "layout/index";
-import Input from "components/Forms/Input";
-import TextArea from "components/Forms/TextArea";
+import Input from "components/forms/Input";
+import TextArea from "components/forms/TextArea";
 import { useInput } from "hooks/useInput";
 
 const AddEngine: React.FC = () => {

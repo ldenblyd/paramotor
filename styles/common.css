@@ -1,0 +1,9 @@
+body {
+  font-family: "Oswald", sans-serif;
+}
+
+.square {
+  width: 100%;
+  height: 328px;
+  object-fit: contain;
+}

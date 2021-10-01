@@ -2,22 +2,33 @@ import Layout from "layout/index";
 import { Product, TypeProduct } from "types/product";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getProduct } from "pages/api/get/product";
+import Image from "next/image";
 
 type Props = {
   product: Product;
   category: TypeProduct;
 };
 
-const PrettyPrintJson = ({ data }) => {
-  return <pre>{JSON.stringify(data, null, 2)}</pre>;
-};
-
 const Details: React.FC<Props> = ({ product, category }) => {
   console.log(category, product);
   return (
     <Layout>
+      <div className="flex">
+        <div className="w-1/2">
+          <Image
+            src={product.imageUrl}
+            alt={`${product.brand} ${product.model}`}
+            width={500}
+            height={500}
+          />
+        </div>
+        <div className="w-1/2 capitalize">
+          <h1 className="text-xl font-bold">{product.model}</h1>
+          <h2>{product.brand}</h2>
+        </div>
+      </div>
       <div>
-        <PrettyPrintJson data={product} />
+        <p>{product.description}</p>
       </div>
     </Layout>
   );

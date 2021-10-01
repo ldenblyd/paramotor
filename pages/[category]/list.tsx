@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-import Grid from "components/Grid/Grid";
+import Grid from "components/grid/Grid";
 import Layout from "layout/index";
 import { Product, TypeProduct } from "types/product";
 import { getProducts } from "pages/api/get/products";
@@ -14,11 +12,11 @@ type Props = {
 const List: React.FC<Props> = ({ products, category }) => {
   return (
     <Layout>
-      <div className="w-full flex justify-center">
+      {/* <div className="w-full flex justify-end uppercase">
         <Link href="/engines/add">
           <a>ajouter un moteur</a>
         </Link>
-      </div>
+      </div> */}
 
       <Grid products={products} category={category} />
     </Layout>
