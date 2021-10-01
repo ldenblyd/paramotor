@@ -12,7 +12,6 @@ type Props = {
 };
 
 const List: React.FC<Props> = ({ products, category }) => {
-  console.log(products);
   return (
     <Layout>
       <div className="w-full flex justify-center">

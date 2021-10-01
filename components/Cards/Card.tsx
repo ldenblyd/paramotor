@@ -12,20 +12,17 @@ type Props = {
 };
 
 const Card: React.FC<Props> = ({ product, category }) => {
-  switch (category) {
-    case "engine":
-      return <EngineCard product={product} />;
-    case "paramotor":
-      return <ParamotorCard product={product} />;
-    case "propeller":
-      return <PropellerCard product={product} />;
-    case "seat":
-      return <SeatCard product={product} />;
-    case "wing":
-      return <WingCard product={product} />;
-    default:
-      return <div>fail</div>;
-  }
+  const productMapping = {
+    engine: EngineCard,
+    paramotor: ParamotorCard,
+    propeller: PropellerCard,
+    seat: SeatCard,
+    wing: WingCard,
+  };
+
+  const Component = productMapping[category];
+
+  return <Component product={product} />;
 };
 
 export default Card;

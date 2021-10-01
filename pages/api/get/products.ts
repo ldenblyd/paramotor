@@ -9,20 +9,15 @@ import { wings } from "mocks/wings";
 import { Product, TypeProduct } from "types/product";
 
 export const getProducts = async (type: TypeProduct): Promise<Product[]> => {
-  switch (type) {
-    case "engine":
-      return engines;
-    case "paramotor":
-      return paramotors;
-    case "propeller":
-      return propellers;
-    case "seat":
-      return seats;
-    case "wing":
-      return wings;
-    default:
-      return [];
-  }
+  const productsMapping = {
+    engine: engines,
+    paramotor: paramotors,
+    propeller: propellers,
+    seat: seats,
+    wing: wings,
+  };
+
+  return productsMapping[type] || [];
 };
 
 // const handler = async (

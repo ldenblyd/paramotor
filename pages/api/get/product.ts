@@ -8,7 +8,6 @@ export const getProduct = async (
   id: string
 ): Promise<Product> => {
   const products = await getProducts(type);
-  console.log("products", id);
   return products.find((p) => p.id === id);
 };
 

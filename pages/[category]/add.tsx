@@ -25,7 +25,6 @@ const AddEngine: React.FC = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(engine);
     resetForm();
   };
 
