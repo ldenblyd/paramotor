@@ -5,8 +5,8 @@ import Image from "next/image";
 const Header: React.FC = () => {
   const { t } = useTranslation("common");
   return (
-    <header className="text-gray-600 body-font flex justify-between items-center uppercase p-4 pb-8">
-      <nav className="">
+    <header className="flex justify-between items-center uppercase p-4 pb-8">
+      <nav>
         <Link href="/">
           <a className="p-4">{t("header.home")}</a>
         </Link>
