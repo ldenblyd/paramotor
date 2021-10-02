@@ -1,8 +1,7 @@
-module.exports = {
-  i18n: {
-    locales: ["en", "fr"],
-    defaultLocale: "en",
-  },
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const nextTranslate = require("next-translate");
+
+module.exports = nextTranslate({
   images: {
     domains: [
       "vittorazi.com",
@@ -15,4 +14,4 @@ module.exports = {
       "www.apcoaviation.com",
     ],
   },
-};
+});

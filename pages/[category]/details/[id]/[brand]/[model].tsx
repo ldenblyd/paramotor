@@ -9,8 +9,7 @@ type Props = {
   category: TypeProduct;
 };
 
-const Details: React.FC<Props> = ({ product, category }) => {
-  console.log(category, product);
+const Details: React.FC<Props> = ({ product }) => {
   return (
     <Layout>
       <div className="flex">

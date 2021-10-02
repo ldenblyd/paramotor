@@ -1,6 +1,6 @@
 import { Product } from "types/product";
 import { Seat } from "types/seat";
-import { getStringInterval } from "utils/getMinMaxValue";
+// import { getStringInterval } from "utils/getMinMaxValue";
 import Link from "next/link";
 import { slug } from "utils/slug";
 import Image from "next/image";
@@ -10,14 +10,14 @@ type Props = {
 };
 
 export const SeatCard: React.FC<Props> = ({ product }) => {
-  const { imageUrl, category, brand, model, size, id } = product as Seat;
+  const { imageUrl, category, brand, model, id } = product as Seat;
 
-  const weightList = size.map((s) => s.weight);
-  const heightList = size.reduce((acc, s) => {
-    acc.push(s.height.min);
-    acc.push(s.height.max);
-    return acc;
-  }, []);
+  // const weightList = size.map((s) => s.weight);
+  // const heightList = size.reduce((acc, s) => {
+  //   acc.push(s.height.min);
+  //   acc.push(s.height.max);
+  //   return acc;
+  // }, []);
 
   return (
     <Link
@@ -37,14 +37,6 @@ export const SeatCard: React.FC<Props> = ({ product }) => {
           <p className="text-sm text-blue-500">{category}</p>
           <p className="text-lg font-bold">
             {brand} {model}
-          </p>
-
-          <p className="text-lg">
-            poid pilote: {getStringInterval(weightList, "kg")}
-          </p>
-
-          <p className="text-lg">
-            taille pilote: {getStringInterval(heightList, "cm")}
           </p>
         </div>
       </div>

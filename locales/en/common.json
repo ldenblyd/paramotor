@@ -1,0 +1,17 @@
+{
+  "header": {
+    "home": "home"
+  },
+  "categories": {
+    "engine": "engine",
+    "engines": "engines",
+    "propeller": "propeller",
+    "propellers": "propellers",
+    "seat": "seat",
+    "seats": "seats",
+    "wing": "wing",
+    "wings": "wings",
+    "paramotor": "paramotor",
+    "paramotors": "paramotors"
+  }
+}

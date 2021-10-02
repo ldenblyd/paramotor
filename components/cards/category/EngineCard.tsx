@@ -1,4 +1,4 @@
-import { getStringInterval } from "utils/getMinMaxValue";
+// import { getStringInterval } from "utils/getMinMaxValue";
 import { Product } from "types/product";
 import Link from "next/link";
 import { Engine } from "types/engine";
@@ -10,18 +10,9 @@ type Props = {
 };
 
 const EngineCard: React.FC<Props> = ({ product }) => {
-  const {
-    imageUrl,
-    category,
-    starter,
-    brand,
-    model,
-    power,
-    cylinderVolume,
-    id,
-  } = product as Engine;
+  const { imageUrl, category, brand, model, id } = product as Engine;
 
-  const weightList = starter.map((s) => s.weight);
+  // const weightList = starter.map((s) => s.weight);
 
   return (
     <Link
@@ -43,11 +34,6 @@ const EngineCard: React.FC<Props> = ({ product }) => {
           <p className="text-lg font-bold">
             {brand} {model}
           </p>
-          <p className="text-lg">cilindrée: {cylinderVolume} cc</p>
-          <p className="text-lg">
-            puissance: {power.hp} Cv at {power.rpm} rpm
-          </p>
-          <p className="text-lg">poid: {getStringInterval(weightList, "kg")}</p>
         </div>
       </div>
     </Link>
