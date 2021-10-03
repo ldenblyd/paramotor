@@ -3,7 +3,7 @@ import Layout from "layout/index";
 import { Product, TypeProduct } from "types/product";
 import { getProducts } from "pages/api/get/products";
 import { GetStaticPaths, GetStaticProps } from "next";
-
+import Button from "components/Button";
 type Props = {
   products: Product[];
   category: TypeProduct;
@@ -12,11 +12,9 @@ type Props = {
 const List: React.FC<Props> = ({ products, category }) => {
   return (
     <Layout>
-      {/* <div className="w-full flex justify-end uppercase">
-        <Link href="/engines/add">
-          <a>ajouter un moteur</a>
-        </Link>
-      </div> */}
+      <div className="w-full flex justify-end uppercase">
+        <Button href={`/${category}/add`} label={`ajouter un ${category}`} />
+      </div>
 
       <Grid products={products} category={category} />
     </Layout>
