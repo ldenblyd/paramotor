@@ -22,7 +22,7 @@ export const getStringInterval = (array: number[], unit: string) => {
   const { min, max } = getMinMaxValue(array);
 
   if (min !== max) {
-    return `de ${min}${unit} à ${max}${unit}`;
+    return `${min}${unit} -> ${max}${unit}`;
   }
   return `${min}${unit}`;
 };

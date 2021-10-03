@@ -3,7 +3,7 @@ export enum Sizes {
   M,
   L,
   XL,
-  ALL,
+  UNIVERSAL,
 }
 
 interface MinMax {

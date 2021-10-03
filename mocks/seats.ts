@@ -42,7 +42,7 @@ export const seats: Seat[] = [
     weight: 2.45,
     size: [
       {
-        value: [Sizes.ALL],
+        value: [Sizes.UNIVERSAL],
         weight: 120,
         height: {
           min: 155,
