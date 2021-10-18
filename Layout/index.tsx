@@ -6,7 +6,10 @@ const Layout: React.FC = ({ children }) => {
       <Head>
         <title>YOUFLY</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="google-site-verification" content="hrv8W8apHCN2Kj2ZgyoPibs_KEWsRg0CucecwdKa9zo" />
+        <meta
+          name="google-site-verification"
+          content="g6ZatC2NQn1IE8qjWh9lHmGZl-C4dJlKtbthRQAw028"
+        />
       </Head>
       {children}
     </div>
