@@ -1,9 +1,10 @@
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
-import Image from "next/image";
+import AuthMenu from "components/auth/AuthMenu";
 
 const Header: React.FC = () => {
   const { t } = useTranslation("common");
+
   return (
     <header className="flex justify-between items-center uppercase p-4 pb-8">
       <nav>
@@ -27,7 +28,7 @@ const Header: React.FC = () => {
         </Link>
       </nav>
       <div className="cursor-pointer">
-        <Image src="/icons/user.svg" alt="user" width={32} height={32} />
+        <AuthMenu />
       </div>
     </header>
   );

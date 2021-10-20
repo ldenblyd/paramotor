@@ -12,6 +12,7 @@ module.exports = nextTranslate({
       "23.cdn.ekm.net",
       "dudek.eu",
       "www.apcoaviation.com",
+      "lh3.googleusercontent.com",
     ],
   },
 });
