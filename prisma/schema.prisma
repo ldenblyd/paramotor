@@ -44,6 +44,11 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  admin         Boolean?
+  Brand         Brand[]
+  Engine        Engine[]
+
+  @@map(name: "users")
 }
 
 model VerificationToken {
@@ -54,16 +59,35 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
-// model Engine {
-//   id             String  @id @default(cuid())
-//   brand          String
-//   model          String
-//   category       String
-//   cylinderVolume String
-//   description    String?
-//   imageUrl       String?
-//   pdf            String?
-//   reduction      Float[]
-//   power_hp       Float
-//   power_rpm      Float
-// }
+enum ClutchEnum {
+  WITH
+  WITOUT
+  CHOOSE
+}
+
+model Brand {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  validated Boolean  @default(false)
+  Engine    Engine[]
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+}
+
+model Engine {
+  id             String      @id @default(cuid())
+  model          String
+  cylinderVolume Float
+  description    String?
+  imageUrl       String?
+  pdf            String?
+  reduction      Float[]
+  power          Json?
+  consumption    Json?
+  Starter        Json[]
+  clutch         ClutchEnum?
+  brand          Brand       @relation(fields: [brandId], references: [id])
+  brandId        String
+  author         User        @relation(fields: [authorId], references: [id])
+  authorId       String
+}

@@ -1,20 +1,29 @@
-import { Bind, TypeInput } from "hooks/useInput";
+import { TypeInput, UseInput } from "hooks/useInputs";
 
-interface Props {
-  placeHolder: string;
-  bind: Bind;
-  type: TypeInput;
-}
+type Props = UseInput & {
+  inputType?: TypeInput;
+  placeHolder?: string;
+};
 
-const Input: React.FC<Props> = ({ placeHolder, bind, type }) => {
+const Input: React.FC<Props> = ({
+  value,
+  placeHolder,
+  inputType,
+  onChange,
+}) => {
   return (
-    <input type={type} className="m-2" {...bind} placeholder={placeHolder} />
+    <input
+      className="w-full"
+      onChange={onChange}
+      value={value}
+      type={inputType}
+      placeholder={placeHolder}
+    />
   );
 };
 
 Input.defaultProps = {
-  placeHolder: "",
-  type: "text",
+  inputType: "text",
 };
 
 export default Input;

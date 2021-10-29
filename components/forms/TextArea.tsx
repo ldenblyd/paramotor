@@ -1,16 +1,17 @@
-import { Bind } from "hooks/useInput";
+import { UseInput } from "hooks/useInputs";
 
-interface Props {
-  placeHolder: string;
-  bind: Bind;
-}
-
-const Textaera: React.FC<Props> = ({ placeHolder, bind }) => {
-  return <textarea className="m-2" {...bind} placeholder={placeHolder} />;
+type Props = UseInput & {
+  placeHolder?: string;
 };
 
-Textaera.defaultProps = {
-  placeHolder: "",
+const Textaera: React.FC<Props> = ({ placeHolder, onChange }) => {
+  return (
+    <textarea
+      className="w-full"
+      onChange={onChange}
+      placeholder={placeHolder}
+    />
+  );
 };
 
 export default Textaera;
