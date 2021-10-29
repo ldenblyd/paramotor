@@ -1,16 +1,7 @@
+import { UseSelect } from "hooks/useSelect";
 import Select from "react-select";
 
-type Suggestion = {
-  label: string;
-  value: string;
-};
-
-interface Props {
-  title: string;
-  suggestions: Suggestion[];
-}
-
-const SelectComponent: React.FC<Props> = ({ suggestions, title }) => {
+const SelectComponent: React.FC<UseSelect> = ({ options, onChange }) => {
   const customStyles = {
     control: (base) => ({
       ...base,
@@ -25,24 +16,20 @@ const SelectComponent: React.FC<Props> = ({ suggestions, title }) => {
   });
 
   return (
-    <>
-      <p className="capitalize">{title}</p>
-      <Select
-        id={`${title}-select`}
-        instanceId={`${title}-select`}
-        onChange={() => ""}
-        options={suggestions}
-        isClearable
-        styles={customStyles}
-        theme={customTheme}
-      />
-    </>
+    <Select
+      id="select"
+      instanceId="select"
+      onChange={onChange}
+      options={options}
+      isClearable
+      styles={customStyles}
+      theme={customTheme}
+    />
   );
 };
 
 SelectComponent.defaultProps = {
-  title: "",
-  suggestions: [],
+  options: [],
 };
 
 export default SelectComponent;

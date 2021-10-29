@@ -11,7 +11,7 @@ const FileInput: React.FC<UseFileUploader> = ({
   reset,
 }) => {
   return (
-    <div className="flex flex-col border rounded-md bg-white">
+    <div className="flex flex-col border-b bg-white">
       {value && (
         <div className="w-full flex flex-col items-center p-4">
           <ImagePreview url={value} onError={onError} />
@@ -25,7 +25,7 @@ const FileInput: React.FC<UseFileUploader> = ({
         </div>
       )}
       {!value && (
-        <div className="flex flex-col p-12">
+        <div className="flex flex-col p-4">
           <UploadByBtn fileType={fileType} onChange={onChange} />
           <div className="text-center my-4">or</div>
           <UploadByUrl onChange={onChange} />

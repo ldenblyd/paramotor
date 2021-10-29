@@ -9,7 +9,7 @@ const UploadByUrl: React.FC<Props> = ({ onChange }) => {
   const [inputValue, setInputValue] = useState<string>("");
 
   return (
-    <div className="flex">
+    <div className="flex px-8">
       <input
         className="w-full"
         type="text"

@@ -2,15 +2,8 @@ import CreatableSelect from "react-select/creatable";
 import { useState } from "react";
 import { UseSelect } from "hooks/useSelect";
 
-type Suggestion = {
-  label: string;
-  value: string;
-};
-
 type Props = UseSelect & {
-  options: Suggestion[];
   createAction: (value) => void;
-  onChange: (value) => void;
 };
 
 const SelectComponent: React.FC<Props> = ({

@@ -19,10 +19,10 @@ export type UseFileUploader = {
 };
 
 export const useFileUploader = (fileType: FileType): UseFileUploader => {
-  const [value, setValue] = useState("");
+  const [value, setFileValue] = useState("");
 
   const reset = () => {
-    setValue("");
+    setFileValue("");
   };
 
   const onError = () => {
@@ -31,7 +31,7 @@ export const useFileUploader = (fileType: FileType): UseFileUploader => {
   };
 
   const onChange = ({ url }) => {
-    setValue(url);
+    setFileValue(url);
   };
 
   return {
