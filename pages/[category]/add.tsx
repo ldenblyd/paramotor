@@ -9,7 +9,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { getBrandList } from "pages/api/create/brand";
 import toast from "react-hot-toast";
 import FileUploader from "components/forms/fileUploader/FileUploader";
-import Image from "next/image";
+import InputList from "components/forms/InputList";
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
@@ -36,8 +36,6 @@ const AddEngine: React.FC<Props> = (props) => {
     description: useInput("text"),
     reduction: useArrayInput("number"),
   };
-
-  // const [brandList, setBrandList] = useState(props.brandList);
 
   const addBrand = async (name) => {
     try {
@@ -101,39 +99,7 @@ const AddEngine: React.FC<Props> = (props) => {
           </div>
           <div className="py-2">
             <p className="capitalize whitespace-nowrap">reduction</p>
-            <div>
-              {engine.reduction.values.map((value, i) => (
-                <div key={i} className="flex mt-2">
-                  <div className="w-20 mr-2">
-                    <Input
-                      inputType={engine.reduction.inputType}
-                      value={value}
-                      onChange={(e) => engine.reduction.onChange(e, i)}
-                    />
-                  </div>
-                  {engine.reduction.values.length > 1 && (
-                    <Image
-                      className="cursor-pointer"
-                      src="/icons/less.svg"
-                      alt="more"
-                      width={32}
-                      height={32}
-                      onClick={() => engine.reduction.remove(i)}
-                    />
-                  )}
-                </div>
-              ))}
-              <div className="mt-2">
-                <Image
-                  className="cursor-pointer"
-                  src="/icons/plus.svg"
-                  alt="more"
-                  width={32}
-                  height={32}
-                  onClick={engine.reduction.add}
-                />
-              </div>
-            </div>
+            <InputList {...engine.reduction} />
           </div>
           <input
             type="submit"
